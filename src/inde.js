@@ -11,7 +11,7 @@ const input = document.querySelector('#search-box');
 input.addEventListener('input', debounce(onInputTypeIn, DEBOUNCE_DELAY));
 
 function onInputTypeIn(event) {
-  if (event.target.value) {
+  if (event.target.value.trim()) {
     fetchCountries(event.target.value.trim())
       .then(response => {
         if (response.length > 10) {
